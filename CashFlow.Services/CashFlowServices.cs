@@ -82,6 +82,7 @@ namespace CashFlow.Services
 
 				entity = model;
 				return _ctx.SaveChanges() == 1; //TODO: See if this works without setting all the properties
+				//TODO: Can't See Log in or Register views but endpoints are there
 			}
 		}
 	}
