@@ -18,7 +18,7 @@ namespace CashFlow.Services
 		{
 			using (_ctx)
 			{
-				_ctx.Users.Add(model);
+				_ctx.UserInfos.Add(model);
 				return _ctx.SaveChanges() == 1;
 			}
 		}
@@ -29,7 +29,7 @@ namespace CashFlow.Services
 			{
 				var entity = 
 					_ctx
-						.Users
+						.UserInfos
 						.Single(x => x.UserId == id && x.OwnerId == _userId);
 
 				return entity;
@@ -42,7 +42,7 @@ namespace CashFlow.Services
 			{
 				var entity =
 					_ctx
-						.Users
+						.UserInfos
 						.Single(x => x.UserId == model.UserId && x.OwnerId == _userId);
 
 				entity.FirstName = model.FirstName;
