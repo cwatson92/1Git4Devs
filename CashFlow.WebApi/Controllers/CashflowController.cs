@@ -21,10 +21,10 @@ namespace CashFlow.WebApi.Controllers
 
         }
 
-        private CashFlowServices CreateCashFlowService()
+        private NetWorthServices CreateCashFlowService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            return new CashFlowServices(userId);
+            return new NetWorthServices(userId);
         }
 
 
@@ -72,6 +72,5 @@ namespace CashFlow.WebApi.Controllers
 
             return Ok();
         }
-    }
     }
 }
