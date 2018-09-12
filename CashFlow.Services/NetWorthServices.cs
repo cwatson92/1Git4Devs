@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace CashFlow.Services
 {
-	public class CashFlowServices : INetWorthServices
+	public class NetWorthServices : INetWorthServices
 	{
 		private readonly Guid _userId;
 		private readonly ApplicationDbContext _ctx;
 
-		public CashFlowServices(Guid userId)
+		public NetWorthServices(Guid userId)
 		{
 
 		}
