@@ -233,6 +233,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CashflowController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -337,9 +338,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CashFlow.Data\CashFlow.Data.csproj">
+      <Project>{60068A28-276C-45C7-B08C-07A52EA4A422}</Project>
+      <Name>CashFlow.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CashFlow.Models\CashFlow.Models.csproj">
       <Project>{b23d4b16-1363-41dc-8e44-90d82d56a9c3}</Project>
       <Name>CashFlow.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CashFlow.Services\CashFlow.Services.csproj">
+      <Project>{1296FB66-EF97-46AB-A817-E18DE88AC29F}</Project>
+      <Name>CashFlow.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
