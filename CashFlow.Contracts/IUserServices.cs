@@ -10,7 +10,7 @@ namespace CashFlow.Contracts
 	public interface IUserServices
 	{
 		bool CreateUser(UserInfo model);
-		bool GetUserInfo(int userId);
-		bool UpdateUserServices(int userId);
+		UserInfo GetUserInfo(int id);
+		bool UpdateUserInfo(UserInfo model);
 	}
 }
