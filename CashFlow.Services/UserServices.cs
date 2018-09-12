@@ -23,22 +23,35 @@ namespace CashFlow.Services
 			}
 		}
 
-		public UserInfo GetUserInfo(int userId)
+		public UserInfo GetUserInfo(int id)
 		{
 			using (_ctx)
 			{
 				var entity = 
 					_ctx
 						.Users
-						.Single(x => x.UserId == userId && x.OwnerId == _userId);
+						.Single(x => x.UserId == id && x.OwnerId == _userId);
 
 				return entity;
 			}
 		}
 
-		public bool UpdateUserServices(int userId)
+		public bool UpdateUserInfo(UserInfo model)
 		{
-			throw new NotImplementedException();
+			using (_ctx)
+			{
+				var entity =
+					_ctx
+						.Users
+						.Single(x => x.UserId == model.UserId && x.OwnerId == _userId);
+
+				entity.FirstName = model.FirstName;
+				entity.LastName = model.LastName;
+				entity.LastFour = model.LastFour;
+				entity.ProfilePic = model.ProfilePic;
+
+				return _ctx.SaveChanges() == 1;
+			}
 		}
 	}
 }
