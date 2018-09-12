@@ -36,7 +36,7 @@ namespace CashFlow.Services
 			}
 		}
 
-		public bool UpdateUserServices(UserInfo model)
+		public bool UpdateUserInfo(UserInfo model)
 		{
 			using (_ctx)
 			{
