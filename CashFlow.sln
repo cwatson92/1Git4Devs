@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.Services", "CashFl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.Models", "CashFlow.Models\CashFlow.Models.csproj", "{B23D4B16-1363-41DC-8E44-90D82D56A9C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.WebAPI", "CashFlow.WebAPI\CashFlow.WebAPI.csproj", "{785B5660-4CD2-4D84-99F8-921558998DF7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{B23D4B16-1363-41DC-8E44-90D82D56A9C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B23D4B16-1363-41DC-8E44-90D82D56A9C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B23D4B16-1363-41DC-8E44-90D82D56A9C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{785B5660-4CD2-4D84-99F8-921558998DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{785B5660-4CD2-4D84-99F8-921558998DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{785B5660-4CD2-4D84-99F8-921558998DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{785B5660-4CD2-4D84-99F8-921558998DF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -82,5 +82,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CashFlow.Data\CashFlow.Data.csproj">
+      <Project>{60068a28-276c-45c7-b08c-07a52ea4a422}</Project>
+      <Name>CashFlow.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
