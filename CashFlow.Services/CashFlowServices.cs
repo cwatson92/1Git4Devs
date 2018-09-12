@@ -50,7 +50,7 @@ namespace CashFlow.Services
 			}
 		}
 
-		public IEnumerable<NetWorth> GetNetWorths()
+		public IEnumerable<NetWorth> GetNetWorths()	
 		{
 			using (_ctx)
 			{
