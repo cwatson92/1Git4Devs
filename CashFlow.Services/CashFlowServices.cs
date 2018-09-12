@@ -44,7 +44,10 @@ namespace CashFlow.Services
 
 		public NetWorth GetNetWorth(int id)
 		{
-			throw new NotImplementedException();
+			using (_ctx)
+			{
+				return _ctx.NetWorths.Single(x => x.NetWorthId == id && x.OwnerId == _userId);
+			}
 		}
 
 		public IEnumerable<NetWorth> GetNetWorths()

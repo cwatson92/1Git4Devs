@@ -35,6 +35,7 @@ namespace CashFlow.Data.Models
 
 		public DbSet<NetWorth> NetWorths { get; set; }
 		public DbSet<UserInfo> UserInfos { get; set; }
+		public DbSet<AdminUsers> AdminUsers { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
