@@ -1,6 +1,5 @@
 ﻿using CashFlow.Contracts;
 using CashFlow.Data;
-using CashFlow.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,7 +52,6 @@ namespace CashFlow.Services
 				entity.FirstName = model.FirstName;
 				entity.LastName = model.LastName;
 				entity.LastFour = model.LastFour;
-				entity.ProfilePic = model.ProfilePic;
 
 				return _ctx.SaveChanges() == 1;
 			}
