@@ -12,7 +12,12 @@ namespace CashFlow.Services
 	public class UserServices : IUserServices
 	{
 		private readonly Guid _userId;
-		private readonly ApplicationDbContext _ctx;
+		ApplicationDbContext _ctx = new ApplicationDbContext();
+
+		public UserServices(Guid userId)
+		{
+			_userId = userId;
+		}
 
 		public bool CreateUser(UserInfo model)
 		{
