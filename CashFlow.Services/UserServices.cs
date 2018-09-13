@@ -1,6 +1,5 @@
 ﻿using CashFlow.Contracts;
 using CashFlow.Data;
-using CashFlow.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +11,12 @@ namespace CashFlow.Services
 	public class UserServices : IUserServices
 	{
 		private readonly Guid _userId;
-		private readonly ApplicationDbContext _ctx;
+		ApplicationDbContext _ctx = new ApplicationDbContext();
+
+		public UserServices(Guid userId)
+		{
+			_userId = userId;
+		}
 
 		public bool CreateUser(UserInfo model)
 		{
@@ -48,7 +52,6 @@ namespace CashFlow.Services
 				entity.FirstName = model.FirstName;
 				entity.LastName = model.LastName;
 				entity.LastFour = model.LastFour;
-				entity.ProfilePic = model.ProfilePic;
 
 				return _ctx.SaveChanges() == 1;
 			}

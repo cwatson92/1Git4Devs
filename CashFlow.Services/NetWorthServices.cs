@@ -1,6 +1,5 @@
 ﻿using CashFlow.Contracts;
 using CashFlow.Data;
-using CashFlow.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +11,11 @@ namespace CashFlow.Services
 	public class NetWorthServices : INetWorthServices
 	{
 		private readonly Guid _userId;
-		private readonly ApplicationDbContext _ctx;
+		ApplicationDbContext _ctx = new ApplicationDbContext();
 
 		public NetWorthServices(Guid userId)
 		{
-
+			_userId = userId;
 		}
 
 		public bool CreateNetWorth(NetWorth model)
