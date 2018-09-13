@@ -1,6 +1,6 @@
 ﻿using CashFlow.Contracts;
 using CashFlow.Data;
-using CashFlow.Data.Models;
+using CashFlow.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;

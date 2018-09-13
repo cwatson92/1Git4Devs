@@ -4,7 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using CashFlow.WebApi.Models;
-using CashFlow.Data.Models;
+using CashFlow.Data;
 
 namespace CashFlow.WebApi
 {

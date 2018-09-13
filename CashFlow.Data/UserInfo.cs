@@ -21,7 +21,6 @@ namespace CashFlow.Data
 		public int LastFour { get; set; }
 
 		public string Username { get; set; }
-
-		public Byte[] ProfilePic { get; set; } //TODO: Change this to a dif datatype for persisting images
+		//TODO: Add Profile Pics
 	}
 }

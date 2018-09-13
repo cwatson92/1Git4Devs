@@ -16,7 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using CashFlow.WebApi.Models;
 using CashFlow.WebApi.Providers;
 using CashFlow.WebApi.Results;
-using CashFlow.Data.Models;
+using CashFlow.Data;
 
 namespace CashFlow.WebApi.Controllers
 {
