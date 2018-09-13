@@ -8,11 +8,12 @@ using Owin;
 
 namespace CashFlow.WebApi
 {
-    public partial class Startup
-    {
-        public void Configuration(IAppBuilder app)
-        {
-            ConfigureAuth(app);
-        }
-    }
+	public partial class Startup
+	{
+		public void Configuration(IAppBuilder app)
+		{
+			app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+			ConfigureAuth(app);
+		}
+	}
 }
