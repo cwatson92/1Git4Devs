@@ -82,7 +82,39 @@ namespace CashFlow.Services
 						.NetWorths
 						.Single(x => x.OwnerId == _userId && x.NetWorthId == model.NetWorthId);
 
-				entity = model;
+				entity.NetWorthId = model.NetWorthId;
+				entity.OwnerId = model.OwnerId;
+				entity.SavingsAccount = model.SavingsAccount;
+				entity.CheckingAccount = model.CheckingAccount;
+				entity.MoneyMarketAccount = model.MoneyMarketAccount;
+				entity.SavingsBonds = model.SavingsBonds;
+				entity.CertificateOfDeposits = model.CertificateOfDeposits;
+				entity.IRA = model.IRA;
+				entity.RothIRA = model.RothIRA;
+				entity.Retirement401K = model.Retirement401K;
+				entity.SepIRA = model.SepIRA;
+				entity.Pension = model.Pension;
+				entity.Annuity = model.Annuity;
+				entity.RealEstate = model.RealEstate;
+				entity.PrincipalHome = model.PrincipalHome;
+				entity.VacationHome = model.VacationHome;
+				entity.CarsTrucksBoats = model.CarsTrucksBoats;
+				entity.HomeFurnishings = model.HomeFurnishings;
+				entity.OtherAssets = model.OtherAssets;
+				entity.TotalAssets = model.TotalAssets;
+				entity.CreditCardBalance = model.CreditCardBalance;
+				entity.EstimatedIncomeTaxOwed = model.EstimatedIncomeTaxOwed;
+				entity.OtherOutstandingBills = model.OtherOutstandingBills;
+				entity.HomeMortgage = model.HomeMortgage;
+				entity.HomeEquityLoan = model.HomeEquityLoan;
+				entity.MortgagesOnRentals = model.MortgagesOnRentals;
+				entity.CarLoans = model.CarLoans;
+				entity.StudentLoans = model.StudentLoans;
+				entity.LifeInsurancePolicyLoans = model.LifeInsurancePolicyLoans;
+				entity.OtherLongTermDebt = model.OtherLongTermDebt;
+				entity.TotalLiabilities = model.TotalLiabilities;
+				entity.TotalNetWorth = model.TotalNetWorth;
+
 				return _ctx.SaveChanges() == 1; //TODO: See if this works without setting all the properties
 				//TODO: Can't See Log in or Register views but endpoints are there
 			}
