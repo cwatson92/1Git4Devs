@@ -115,8 +115,7 @@ namespace CashFlow.Services
 				entity.TotalLiabilities = model.TotalLiabilities;
 				entity.TotalNetWorth = model.TotalNetWorth;
 
-				return _ctx.SaveChanges() == 1; //TODO: See if this works without setting all the properties
-				//TODO: Can't See Log in or Register views but endpoints are there
+				return _ctx.SaveChanges() == 1;
 			}
 		}
 	}
