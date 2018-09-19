@@ -59,8 +59,6 @@ namespace CashFlow.Data
 
 		public decimal CreditCardBalance { get; set; }
 
-		public decimal EstimatedIncome { get; set; }
-
 		public decimal EstimatedIncomeTaxOwed { get; set; }
 
 		public decimal OtherOutstandingBills { get; set; }
@@ -81,7 +79,7 @@ namespace CashFlow.Data
 
 		public decimal TotalLiabilities
 		{
-			get => CreditCardBalance + EstimatedIncome + EstimatedIncomeTaxOwed +
+			get => CreditCardBalance + EstimatedIncomeTaxOwed +
 				OtherOutstandingBills + HomeMortgage + HomeEquityLoan + MortgagesOnRentals +
 				CarLoans + StudentLoans + LifeInsurancePolicyLoans + OtherLongTermDebt;
 			set { }
