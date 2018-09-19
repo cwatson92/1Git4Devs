@@ -106,6 +106,10 @@
     <Compile Include="Migrations\201809190121450_AddedBudgetDataModels.Designer.cs">
       <DependentUpon>201809190121450_AddedBudgetDataModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809190134347_addedDbSetToIdentityModels.cs" />
+    <Compile Include="Migrations\201809190134347_addedDbSetToIdentityModels.Designer.cs">
+      <DependentUpon>201809190134347_addedDbSetToIdentityModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NetWorth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809190121450_AddedBudgetDataModels.resx">
       <DependentUpon>201809190121450_AddedBudgetDataModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809190134347_addedDbSetToIdentityModels.resx">
+      <DependentUpon>201809190134347_addedDbSetToIdentityModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
