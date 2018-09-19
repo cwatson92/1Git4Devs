@@ -91,10 +91,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminUsers.cs" />
+    <Compile Include="Budget.cs" />
+    <Compile Include="Expense.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\201809131506432_intitial.cs" />
     <Compile Include="Migrations\201809131506432_intitial.Designer.cs">
       <DependentUpon>201809131506432_intitial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809171806082_removedRedundantColumn.cs" />
+    <Compile Include="Migrations\201809171806082_removedRedundantColumn.Designer.cs">
+      <DependentUpon>201809171806082_removedRedundantColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809190121450_AddedBudgetDataModels.cs" />
+    <Compile Include="Migrations\201809190121450_AddedBudgetDataModels.Designer.cs">
+      <DependentUpon>201809190121450_AddedBudgetDataModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809190134347_addedDbSetToIdentityModels.cs" />
+    <Compile Include="Migrations\201809190134347_addedDbSetToIdentityModels.Designer.cs">
+      <DependentUpon>201809190134347_addedDbSetToIdentityModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809190150266_addedMathForAvailableBalance.cs" />
+    <Compile Include="Migrations\201809190150266_addedMathForAvailableBalance.Designer.cs">
+      <DependentUpon>201809190150266_addedMathForAvailableBalance.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NetWorth.cs" />
@@ -108,6 +126,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809131506432_intitial.resx">
       <DependentUpon>201809131506432_intitial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809171806082_removedRedundantColumn.resx">
+      <DependentUpon>201809171806082_removedRedundantColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809190121450_AddedBudgetDataModels.resx">
+      <DependentUpon>201809190121450_AddedBudgetDataModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809190134347_addedDbSetToIdentityModels.resx">
+      <DependentUpon>201809190134347_addedDbSetToIdentityModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809190150266_addedMathForAvailableBalance.resx">
+      <DependentUpon>201809190150266_addedMathForAvailableBalance.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

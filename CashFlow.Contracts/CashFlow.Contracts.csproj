@@ -90,6 +90,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBudget.cs" />
     <Compile Include="INetWorthServices.cs" />
     <Compile Include="IUserServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
