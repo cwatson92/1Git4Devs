@@ -18,6 +18,18 @@ namespace CashFlow.Data
 
 		public decimal MonthlyIncome { get; set; }	
 
-		public decimal AvailableBalance { get; set; }
+		public decimal AvailableBalance
+		{
+			get
+			{
+				decimal totalCosts = 0;
+				foreach(var e in Expenses)
+				{
+					totalCosts += e.Cost;
+				}
+				return MonthlyIncome - totalCosts;
+			}
+			set { }
+		}
 	}
 }
