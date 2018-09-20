@@ -10,6 +10,7 @@ using System.Web.Http;
 
 namespace CashFlow.WebApi.Controllers
 {
+	[Authorize]
 	public class ExpenseController : ApiController
 	{
 

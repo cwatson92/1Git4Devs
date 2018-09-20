@@ -10,6 +10,7 @@ using System.Web.Http;
 
 namespace CashFlow.WebApi.Controllers
 {
+	[Authorize]
 	public class BudgetController : ApiController
 	{
 		public IHttpActionResult Get(int id)
