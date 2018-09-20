@@ -37,6 +37,7 @@ namespace CashFlow.Data
 		public DbSet<UserInfo> UserInfos { get; set; }
 		public DbSet<AdminUsers> AdminUsers { get; set; }
 		public DbSet<Budget> Budgets { get; set; }
+		public DbSet<Expense> Expenses { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
