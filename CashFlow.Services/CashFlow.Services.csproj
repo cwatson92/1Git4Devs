@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BudgetServices.cs" />
+    <Compile Include="ExpenseServices.cs" />
     <Compile Include="NetWorthServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserServices.cs" />
@@ -103,10 +104,6 @@
     <ProjectReference Include="..\CashFlow.Data\CashFlow.Data.csproj">
       <Project>{60068A28-276C-45C7-B08C-07A52EA4A422}</Project>
       <Name>CashFlow.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CashFlow.Models\CashFlow.Models.csproj">
-      <Project>{B23D4B16-1363-41DC-8E44-90D82D56A9C3}</Project>
-      <Name>CashFlow.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

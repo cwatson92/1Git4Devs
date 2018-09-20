@@ -114,6 +114,18 @@
     <Compile Include="Migrations\201809190150266_addedMathForAvailableBalance.Designer.cs">
       <DependentUpon>201809190150266_addedMathForAvailableBalance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809191748578_addedForeignKey.cs" />
+    <Compile Include="Migrations\201809191748578_addedForeignKey.Designer.cs">
+      <DependentUpon>201809191748578_addedForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809201732323_changes.cs" />
+    <Compile Include="Migrations\201809201732323_changes.Designer.cs">
+      <DependentUpon>201809201732323_changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809201743270_changingShit.cs" />
+    <Compile Include="Migrations\201809201743270_changingShit.Designer.cs">
+      <DependentUpon>201809201743270_changingShit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NetWorth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,6 +150,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809190150266_addedMathForAvailableBalance.resx">
       <DependentUpon>201809190150266_addedMathForAvailableBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809191748578_addedForeignKey.resx">
+      <DependentUpon>201809191748578_addedForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809201732323_changes.resx">
+      <DependentUpon>201809201732323_changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809201743270_changingShit.resx">
+      <DependentUpon>201809201743270_changingShit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
