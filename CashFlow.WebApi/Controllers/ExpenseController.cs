@@ -37,11 +37,11 @@ namespace CashFlow.WebApi.Controllers
 
 		public IHttpActionResult Post(Expense model)
 		{
-			var serivce = CreateExpenseServices();
+			var service = CreateExpenseServices();
 
 			if (!ModelState.IsValid) return BadRequest(ModelState);
 
-			if (!serivce.CreateExpense(model)) return InternalServerError();
+			if (!service.CreateExpense(model)) return InternalServerError();
 
 			return Ok();
 		}
