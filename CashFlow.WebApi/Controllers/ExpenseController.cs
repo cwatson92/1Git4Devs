@@ -14,21 +14,9 @@ namespace CashFlow.WebApi.Controllers
 	[Authorize]
 	public class ExpenseController : ApiController
 	{
-		private readonly IExpenseServices _expenseServices;
-
-		public ExpenseController()
-		{
-			//_expenseServices = new Lazy<IExpenseServices>(() => CreateExpenseServices());
-		}
-
-		public ExpenseController(IExpenseServices expenseServices)
-		{
-			_expenseServices = expenseServices;
-		}
-
 		public IHttpActionResult Get(int id)
 		{
-			var expense = _expenseServices.GetExpense(id);
+			var expense = service.GetExpense(id);
 			return Ok(expense);
 		}
 
@@ -36,7 +24,7 @@ namespace CashFlow.WebApi.Controllers
 		{
 			if (!ModelState.IsValid) return BadRequest(ModelState);
 
-			if (!_expenseServices.CreateExpense(model)) return InternalServerError();
+			if (!service.CreateExpense(model)) return InternalServerError();
 
 			return Ok();
 		}
@@ -45,22 +33,27 @@ namespace CashFlow.WebApi.Controllers
 		{
 			if (!ModelState.IsValid) return BadRequest(ModelState);
 
-			if (!_expenseServices.UpdateExpense(model)) return InternalServerError();
+			if (!service.UpdateExpense(model)) return InternalServerError();
 
 			return Ok();
 		}
 
 		public IHttpActionResult GetAll()
 		{
-			var expenses = _expenseServices.GetExpenses();
+			var expenses = service.GetExpenses();
 			return Ok(expenses);
 		}
 
 		public IHttpActionResult Delete(int id)
 		{
-			if (!_expenseServices.DeleteExpense(id)) return InternalServerError();
+			if (!service.DeleteExpense(id)) return InternalServerError();
 
 			return Ok();
+		}
+
+		private ExpenseServices CreateExpenseService()
+		{
+			return new ExpenseServices(Guid.Parse(User.Identity.GetUserId()));
 		}
 	}
 }
