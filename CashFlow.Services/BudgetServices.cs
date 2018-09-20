@@ -10,7 +10,7 @@ namespace CashFlow.Services
 {
 	public class BudgetServices : IBudget
 	{
-		private readonly ApplicationDbContext _ctx;
+		ApplicationDbContext _ctx = new ApplicationDbContext();
 		private readonly Guid _userId;
 
 		public BudgetServices(Guid userId)
