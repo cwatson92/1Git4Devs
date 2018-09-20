@@ -13,6 +13,8 @@ namespace CashFlow.Services
 		private readonly ApplicationDbContext _ctx = new ApplicationDbContext();
 		private readonly Guid _userId;
 
+		public ExpenseServices() { }
+
 		public ExpenseServices(Guid userId)
 		{
 			_userId = userId;

@@ -27,7 +27,7 @@ namespace CashFlow.WebApiTests
 			_fakeExpenseService = new FakeExpenseServices();
 
 			_controller = new ExpenseController(
-				new Lazy<IExpenseServices>(() => _fakeExpenseService));
+				new FakeExpenseServices());
 		}
 	}
 }

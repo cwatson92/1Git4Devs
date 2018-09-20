@@ -14,68 +14,53 @@ namespace CashFlow.WebApi.Controllers
 	[Authorize]
 	public class ExpenseController : ApiController
 	{
-		private readonly Lazy<IExpenseServices> _expenseServices;
-		private IExpenseServices ExpenseService => _expenseServices.Value;
+		private readonly IExpenseServices _expenseServices;
 
 		public ExpenseController()
 		{
-			_expenseServices = new Lazy<IExpenseServices>(() =>
-			new ExpenseServices(Guid.Parse(User.Identity.GetUserId())));
+			//_expenseServices = new Lazy<IExpenseServices>(() => CreateExpenseServices());
 		}
 
-		public ExpenseController(Lazy<IExpenseServices> expenseServices)
+		public ExpenseController(IExpenseServices expenseServices)
 		{
 			_expenseServices = expenseServices;
 		}
 
 		public IHttpActionResult Get(int id)
 		{
-			var service = CreateExpenseServices();
-			var expense = service.GetExpense(id);
+			var expense = _expenseServices.GetExpense(id);
 			return Ok(expense);
 		}
 
 		public IHttpActionResult Post(Expense model)
 		{
-			var service = CreateExpenseServices();
-
 			if (!ModelState.IsValid) return BadRequest(ModelState);
 
-			if (!service.CreateExpense(model)) return InternalServerError();
+			if (!_expenseServices.CreateExpense(model)) return InternalServerError();
 
 			return Ok();
 		}
 
 		public IHttpActionResult Put(Expense model)
 		{
-			var service = CreateExpenseServices();
-
 			if (!ModelState.IsValid) return BadRequest(ModelState);
 
-			if (!service.UpdateExpense(model)) return InternalServerError();
+			if (!_expenseServices.UpdateExpense(model)) return InternalServerError();
 
 			return Ok();
 		}
 
 		public IHttpActionResult GetAll()
 		{
-			var service = CreateExpenseServices();
-			var expenses = service.GetExpenses();
+			var expenses = _expenseServices.GetExpenses();
 			return Ok(expenses);
 		}
 
 		public IHttpActionResult Delete(int id)
 		{
-			var service = CreateExpenseServices();
-
-			if (!service.DeleteExpense(id)) return InternalServerError();
+			if (!_expenseServices.DeleteExpense(id)) return InternalServerError();
 
 			return Ok();
-		}
-
-		private ExpenseServices CreateExpenseServices()
-		{
-			return new ExpenseServices(Guid.Parse(User.Identity.GetUserId()));
 		}
 	}
 }

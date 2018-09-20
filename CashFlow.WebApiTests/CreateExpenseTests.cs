@@ -29,7 +29,7 @@ namespace CashFlow.WebApiTests
 		{
 			var result = Act();
 
-			Assert.IsTrue(_fakeExpenseService.CallCount == 1);
+			Assert.IsInstanceOfType(result, typeof(IHttpActionResult));
 		}
 	}
 }
