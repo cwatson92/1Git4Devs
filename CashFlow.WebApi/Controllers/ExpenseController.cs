@@ -1,4 +1,5 @@
-﻿using CashFlow.Data;
+﻿using CashFlow.Contracts;
+using CashFlow.Data;
 using CashFlow.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -13,6 +14,19 @@ namespace CashFlow.WebApi.Controllers
 	[Authorize]
 	public class ExpenseController : ApiController
 	{
+		private readonly Lazy<IExpenseServices> _expenseServices;
+		private IExpenseServices ExpenseService => _expenseServices.Value;
+
+		public ExpenseController()
+		{
+			_expenseServices = new Lazy<IExpenseServices>(() =>
+			new ExpenseServices(Guid.Parse(User.Identity.GetUserId())));
+		}
+
+		public ExpenseController(Lazy<IExpenseServices> expenseServices)
+		{
+			_expenseServices = expenseServices;
+		}
 
 		public IHttpActionResult Get(int id)
 		{
