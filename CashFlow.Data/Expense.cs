@@ -12,6 +12,8 @@ namespace CashFlow.Data
 		[Key]
 		public int ExpenseId { get; set; }
 
+		public Guid OwnerId { get; set; }
+
 		public int BudgetId { get; set; }
 
 		public string Name { get; set; }

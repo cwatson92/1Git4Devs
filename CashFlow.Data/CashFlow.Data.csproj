@@ -122,6 +122,10 @@
     <Compile Include="Migrations\201809201732323_changes.Designer.cs">
       <DependentUpon>201809201732323_changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809201743270_changingShit.cs" />
+    <Compile Include="Migrations\201809201743270_changingShit.Designer.cs">
+      <DependentUpon>201809201743270_changingShit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NetWorth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809201732323_changes.resx">
       <DependentUpon>201809201732323_changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809201743270_changingShit.resx">
+      <DependentUpon>201809201743270_changingShit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
