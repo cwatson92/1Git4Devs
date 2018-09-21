@@ -10,7 +10,7 @@ namespace CashFlow.Services
 {
 	public class UserServices : IUserServices
 	{
-		private readonly Guid _userId;
+		private Guid _userId;
 		ApplicationDbContext _ctx = new ApplicationDbContext();
 
 		public UserServices(Guid userId)

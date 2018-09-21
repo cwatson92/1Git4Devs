@@ -10,8 +10,8 @@ namespace CashFlow.Services
 {
 	public class ExpenseServices : IExpenseServices
 	{
-		private readonly ApplicationDbContext _ctx = new ApplicationDbContext();
-		private readonly Guid _userId;
+		private ApplicationDbContext _ctx = new ApplicationDbContext();
+		private Guid _userId;
 
 		public ExpenseServices() { }
 
@@ -22,9 +22,18 @@ namespace CashFlow.Services
 
 		public bool CreateExpense(Expense model)
 		{
+			var entity = new Expense()
+			{
+				OwnerId = model.OwnerId,
+				ExpenseId = model.ExpenseId,
+				Name = model.Name,
+				Cost = model.Cost,
+				Description = model.Description
+			};
+
 			using (_ctx)
 			{
-				_ctx.Expenses.Add(model);
+				_ctx.Expenses.Add(entity);
 				return _ctx.SaveChanges() == 1;
 			}
 		}

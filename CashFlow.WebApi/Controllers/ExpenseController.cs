@@ -16,12 +16,15 @@ namespace CashFlow.WebApi.Controllers
 	{
 		public IHttpActionResult Get(int id)
 		{
+			var service = CreateExpenseService();
 			var expense = service.GetExpense(id);
 			return Ok(expense);
 		}
 
 		public IHttpActionResult Post(Expense model)
 		{
+			var service = CreateExpenseService();
+
 			if (!ModelState.IsValid) return BadRequest(ModelState);
 
 			if (!service.CreateExpense(model)) return InternalServerError();
@@ -31,6 +34,8 @@ namespace CashFlow.WebApi.Controllers
 
 		public IHttpActionResult Put(Expense model)
 		{
+			var service = CreateExpenseService();
+
 			if (!ModelState.IsValid) return BadRequest(ModelState);
 
 			if (!service.UpdateExpense(model)) return InternalServerError();
@@ -40,12 +45,15 @@ namespace CashFlow.WebApi.Controllers
 
 		public IHttpActionResult GetAll()
 		{
+			var service = CreateExpenseService();
 			var expenses = service.GetExpenses();
 			return Ok(expenses);
 		}
 
 		public IHttpActionResult Delete(int id)
 		{
+			var service = CreateExpenseService();
+
 			if (!service.DeleteExpense(id)) return InternalServerError();
 
 			return Ok();

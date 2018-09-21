@@ -10,7 +10,7 @@ namespace CashFlow.Services
 {
 	public class NetWorthServices : INetWorthServices
 	{
-		private readonly Guid _userId;
+		private Guid _userId;
 		ApplicationDbContext _ctx = new ApplicationDbContext();
 
 		public NetWorthServices(Guid userId)
