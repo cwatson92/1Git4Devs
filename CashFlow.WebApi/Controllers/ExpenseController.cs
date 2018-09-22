@@ -1,4 +1,5 @@
-﻿using CashFlow.Data;
+﻿using CashFlow.Contracts;
+using CashFlow.Data;
 using CashFlow.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -10,30 +11,30 @@ using System.Web.Http;
 
 namespace CashFlow.WebApi.Controllers
 {
+	[Authorize]
 	public class ExpenseController : ApiController
 	{
-
 		public IHttpActionResult Get(int id)
 		{
-			var service = CreateExpenseServices();
+			var service = CreateExpenseService();
 			var expense = service.GetExpense(id);
 			return Ok(expense);
 		}
 
 		public IHttpActionResult Post(Expense model)
 		{
-			var serivce = CreateExpenseServices();
+			var service = CreateExpenseService();
 
 			if (!ModelState.IsValid) return BadRequest(ModelState);
 
-			if (!serivce.CreateExpense(model)) return InternalServerError();
+			if (!service.CreateExpense(model)) return InternalServerError();
 
 			return Ok();
 		}
 
 		public IHttpActionResult Put(Expense model)
 		{
-			var service = CreateExpenseServices();
+			var service = CreateExpenseService();
 
 			if (!ModelState.IsValid) return BadRequest(ModelState);
 
@@ -44,21 +45,21 @@ namespace CashFlow.WebApi.Controllers
 
 		public IHttpActionResult GetAll()
 		{
-			var service = CreateExpenseServices();
+			var service = CreateExpenseService();
 			var expenses = service.GetExpenses();
 			return Ok(expenses);
 		}
 
 		public IHttpActionResult Delete(int id)
 		{
-			var service = CreateExpenseServices();
+			var service = CreateExpenseService();
 
 			if (!service.DeleteExpense(id)) return InternalServerError();
 
 			return Ok();
 		}
 
-		private ExpenseServices CreateExpenseServices()
+		private ExpenseServices CreateExpenseService()
 		{
 			return new ExpenseServices(Guid.Parse(User.Identity.GetUserId()));
 		}

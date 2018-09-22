@@ -11,7 +11,7 @@ namespace CashFlow.Services
 	public class BudgetServices : IBudget
 	{
 		ApplicationDbContext _ctx = new ApplicationDbContext();
-		private readonly Guid _userId;
+		private Guid _userId;
 
 		public BudgetServices(Guid userId)
 		{
