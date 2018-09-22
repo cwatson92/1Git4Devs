@@ -10,8 +10,8 @@ namespace CashFlow.Services
 {
 	public class ExpenseServices : IExpenseServices
 	{
-		private readonly ApplicationDbContext _ctx = new ApplicationDbContext();
-		private readonly Guid _userId;
+		private ApplicationDbContext _ctx = new ApplicationDbContext();
+		private Guid _userId;
 
 		public ExpenseServices(Guid userId)
 		{
@@ -76,8 +76,6 @@ namespace CashFlow.Services
 				entity.Name = model.Name;
 				entity.ExpenseId = model.ExpenseId;
 				entity.Cost = model.Cost;
-				entity.Budget = model.Budget;
-				entity.BudgetId = model.BudgetId;
 				entity.Description = model.Description;
 
 				return _ctx.SaveChanges() == 1;

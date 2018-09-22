@@ -14,14 +14,11 @@ namespace CashFlow.Data
 
 		public Guid OwnerId { get; set; }
 
-		public int BudgetId { get; set; }
-
+		[Required]
 		public string Name { get; set; }
 
 		public decimal Cost { get; set; }
 		
 		public string Description { get; set; }
-
-		public virtual Budget Budget { get; set; }
 	}
 }

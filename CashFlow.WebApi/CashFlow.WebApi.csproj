@@ -291,7 +291,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Properties\PublishProfiles\CashFlowFinance - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\CashFlowFinances - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -353,6 +353,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CashFlow.Contracts\CashFlow.Contracts.csproj">
+      <Project>{CE5B16ED-3698-4F07-ABCE-4A65F82A817C}</Project>
+      <Name>CashFlow.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CashFlow.Data\CashFlow.Data.csproj">
       <Project>{60068A28-276C-45C7-B08C-07A52EA4A422}</Project>
       <Name>CashFlow.Data</Name>
