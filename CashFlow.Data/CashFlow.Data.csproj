@@ -126,6 +126,10 @@
     <Compile Include="Migrations\201809201743270_changingShit.Designer.cs">
       <DependentUpon>201809201743270_changingShit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809220215265_deletedBudgetObjectFromExpense.cs" />
+    <Compile Include="Migrations\201809220215265_deletedBudgetObjectFromExpense.Designer.cs">
+      <DependentUpon>201809220215265_deletedBudgetObjectFromExpense.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NetWorth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -159,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809201743270_changingShit.resx">
       <DependentUpon>201809201743270_changingShit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809220215265_deletedBudgetObjectFromExpense.resx">
+      <DependentUpon>201809220215265_deletedBudgetObjectFromExpense.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

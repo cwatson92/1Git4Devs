@@ -14,6 +14,7 @@ namespace CashFlow.Data
 
 		public Guid OwnerId { get; set; }
 
+		[Required]
 		public decimal SavingsAccount { get; set; }
 
 		public decimal CheckingAccount { get; set; }

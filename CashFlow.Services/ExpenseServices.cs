@@ -13,8 +13,6 @@ namespace CashFlow.Services
 		private ApplicationDbContext _ctx = new ApplicationDbContext();
 		private Guid _userId;
 
-		public ExpenseServices() { }
-
 		public ExpenseServices(Guid userId)
 		{
 			_userId = userId;
@@ -22,18 +20,9 @@ namespace CashFlow.Services
 
 		public bool CreateExpense(Expense model)
 		{
-			var entity = new Expense()
-			{
-				OwnerId = model.OwnerId,
-				ExpenseId = model.ExpenseId,
-				Name = model.Name,
-				Cost = model.Cost,
-				Description = model.Description
-			};
-
 			using (_ctx)
 			{
-				_ctx.Expenses.Add(entity);
+				_ctx.Expenses.Add(model);
 				return _ctx.SaveChanges() == 1;
 			}
 		}
@@ -87,7 +76,6 @@ namespace CashFlow.Services
 				entity.Name = model.Name;
 				entity.ExpenseId = model.ExpenseId;
 				entity.Cost = model.Cost;
-				entity.Budget = model.Budget;
 				entity.BudgetId = model.BudgetId;
 				entity.Description = model.Description;
 
