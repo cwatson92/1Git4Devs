@@ -76,7 +76,6 @@ namespace CashFlow.Services
 				entity.Name = model.Name;
 				entity.ExpenseId = model.ExpenseId;
 				entity.Cost = model.Cost;
-				entity.BudgetId = model.BudgetId;
 				entity.Description = model.Description;
 
 				return _ctx.SaveChanges() == 1;

@@ -14,7 +14,7 @@ namespace CashFlow.Data
 
 		public Guid OwnerId { get; set; }
 
-		public List<Expense> Expenses { get; set; }
+		public virtual ICollection<Expense> Expenses { get; set; }
 
 		public decimal MonthlyIncome { get; set; }	
 
