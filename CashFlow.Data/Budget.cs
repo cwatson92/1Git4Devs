@@ -14,23 +14,14 @@ namespace CashFlow.Data
 
 		public Guid OwnerId { get; set; }
 
-		public virtual ICollection<Expense> Expenses { get; set; }
-
 		[Required]
 		public decimal MonthlyIncome { get; set; }
 
-		public decimal AvailableBalance
-		{
-			get
-			{
-				decimal totalCosts = 0;
-				foreach (var e in Expenses)
-				{
-					totalCosts += e.Cost;
-				}
-				return MonthlyIncome - totalCosts;
-			}
-			set { }
-		}
+		[Required]
+		public decimal EstimatedAvailableBalance { get; set; }
+
+		[Required]
+		public decimal SavingsAmount { get; set; }
+
 	}
 }

@@ -138,6 +138,14 @@
     <Compile Include="Migrations\201809221424348_DidShit.Designer.cs">
       <DependentUpon>201809221424348_DidShit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809251543296_puttingSomeBizLogicInFrontEnd.cs" />
+    <Compile Include="Migrations\201809251543296_puttingSomeBizLogicInFrontEnd.Designer.cs">
+      <DependentUpon>201809251543296_puttingSomeBizLogicInFrontEnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809251549219_addedPropsToBudget.cs" />
+    <Compile Include="Migrations\201809251549219_addedPropsToBudget.Designer.cs">
+      <DependentUpon>201809251549219_addedPropsToBudget.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NetWorth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -180,6 +188,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809221424348_DidShit.resx">
       <DependentUpon>201809221424348_DidShit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809251543296_puttingSomeBizLogicInFrontEnd.resx">
+      <DependentUpon>201809251543296_puttingSomeBizLogicInFrontEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809251549219_addedPropsToBudget.resx">
+      <DependentUpon>201809251549219_addedPropsToBudget.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
