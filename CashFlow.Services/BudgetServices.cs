@@ -64,9 +64,9 @@ namespace CashFlow.Services
 								{
 									BudgetId = x.BudgetId,
 									OwnerId = x.OwnerId,
-									AvailableBalance = x.AvailableBalance,
-									Expenses = x.Expenses,
-									MonthlyIncome = x.MonthlyIncome
+									MonthlyIncome = x.MonthlyIncome,
+									EstimatedAvailableBalance = x.EstimatedAvailableBalance,
+									SavingsAmount = x.SavingsAmount
 								}
 						);
 
@@ -84,10 +84,10 @@ namespace CashFlow.Services
 						.Single(x => x.OwnerId == _userId && x.BudgetId == model.BudgetId);
 
 				entity.BudgetId = model.BudgetId;
-				entity.Expenses = model.Expenses;
 				entity.MonthlyIncome = model.MonthlyIncome;
 				entity.OwnerId = model.OwnerId;
-				entity.AvailableBalance = model.AvailableBalance;
+				entity.SavingsAmount = model.SavingsAmount;
+				entity.EstimatedAvailableBalance = model.EstimatedAvailableBalance;
 
 				return _ctx.SaveChanges() == 1;
 			}
