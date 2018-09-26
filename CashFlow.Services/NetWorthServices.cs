@@ -20,6 +20,8 @@ namespace CashFlow.Services
 
 		public bool CreateNetWorth(NetWorth model)
 		{
+			model.OwnerId = _userId;
+
 			using (_ctx)
 			{
 				_ctx.NetWorths.Add(model);

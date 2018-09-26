@@ -20,6 +20,7 @@ namespace CashFlow.Services
 
 		public bool CreateExpense(Expense model)
 		{
+			model.OwnerId = _userId;
 			using (_ctx)
 			{
 				_ctx.Expenses.Add(model);
