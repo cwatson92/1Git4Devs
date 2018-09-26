@@ -20,6 +20,8 @@ namespace CashFlow.Services
 
 		public bool CreateBudget(Budget model)
 		{
+			model.OwnerId = _userId;
+
 			using (_ctx)
 			{
 				_ctx.Budgets.Add(model);
