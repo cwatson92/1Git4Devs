@@ -146,6 +146,10 @@
     <Compile Include="Migrations\201809251549219_addedPropsToBudget.Designer.cs">
       <DependentUpon>201809251549219_addedPropsToBudget.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809261858026_removedLogicInDataNetworth.cs" />
+    <Compile Include="Migrations\201809261858026_removedLogicInDataNetworth.Designer.cs">
+      <DependentUpon>201809261858026_removedLogicInDataNetworth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NetWorth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -194,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809251549219_addedPropsToBudget.resx">
       <DependentUpon>201809251549219_addedPropsToBudget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809261858026_removedLogicInDataNetworth.resx">
+      <DependentUpon>201809261858026_removedLogicInDataNetworth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

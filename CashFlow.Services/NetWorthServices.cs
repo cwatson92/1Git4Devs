@@ -65,9 +65,6 @@ namespace CashFlow.Services
 								{
 									NetWorthId = x.NetWorthId,
 									OwnerId = x.OwnerId,
-									TotalAssets = x.TotalAssets,
-									TotalLiabilities = x.TotalLiabilities,
-									TotalNetWorth = x.TotalNetWorth
 								}
 						);
 
