@@ -48,7 +48,19 @@ namespace CashFlow.Services
 		{
 			using (_ctx)
 			{
-				return _ctx.Budgets.Single(x => x.BudgetId == id && x.OwnerId == _userId);
+				var entity =
+					_ctx
+						.Budgets
+						.Single(x => x.OwnerId == _userId && x.BudgetId == id);
+
+				return new Budget
+				{
+					BudgetId = entity.BudgetId,
+					OwnerId = entity.OwnerId,
+					MonthlyIncome = entity.MonthlyIncome,
+					EstimatedAvailableBalance = entity.EstimatedAvailableBalance,
+					SavingsAmount = entity.SavingsAmount
+				};
 			}
 		}
 
@@ -56,21 +68,9 @@ namespace CashFlow.Services
 		{
 			using (_ctx)
 			{
-				var query =
-					_ctx
-						.Budgets
-						.Select
-						(
-							x =>
-								new Budget
-								{
-									BudgetId = x.BudgetId,
-									OwnerId = x.OwnerId,
-									MonthlyIncome = x.MonthlyIncome,
-									EstimatedAvailableBalance = x.EstimatedAvailableBalance,
-									SavingsAmount = x.SavingsAmount
-								}
-						);
+				var query = from b in _ctx.Budgets
+					   where b.OwnerId == _userId
+					   select b;
 
 				return query.ToArray();
 			}
@@ -78,6 +78,8 @@ namespace CashFlow.Services
 
 		public bool UpdateBudget(Budget model)
 		{
+			model.OwnerId = _userId;
+
 			using (_ctx)
 			{
 				var entity =
