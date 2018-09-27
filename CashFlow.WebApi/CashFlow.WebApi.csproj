@@ -361,6 +361,10 @@
       <Project>{60068A28-276C-45C7-B08C-07A52EA4A422}</Project>
       <Name>CashFlow.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CashFlow.Models\CashFlow.Models.csproj">
+      <Project>{D7708F9E-2F5D-4723-A92E-F93E2FB325E6}</Project>
+      <Name>CashFlow.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CashFlow.Services\CashFlow.Services.csproj">
       <Project>{1296FB66-EF97-46AB-A817-E18DE88AC29F}</Project>
       <Name>CashFlow.Services</Name>
