@@ -146,6 +146,14 @@
     <Compile Include="Migrations\201809251549219_addedPropsToBudget.Designer.cs">
       <DependentUpon>201809251549219_addedPropsToBudget.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809270048478_changedDbModel.cs" />
+    <Compile Include="Migrations\201809270048478_changedDbModel.Designer.cs">
+      <DependentUpon>201809270048478_changedDbModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809270139367_changedDbModelsAgain.cs" />
+    <Compile Include="Migrations\201809270139367_changedDbModelsAgain.Designer.cs">
+      <DependentUpon>201809270139367_changedDbModelsAgain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NetWorth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -194,6 +202,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809251549219_addedPropsToBudget.resx">
       <DependentUpon>201809251549219_addedPropsToBudget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809270048478_changedDbModel.resx">
+      <DependentUpon>201809270048478_changedDbModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809270139367_changedDbModelsAgain.resx">
+      <DependentUpon>201809270139367_changedDbModelsAgain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
