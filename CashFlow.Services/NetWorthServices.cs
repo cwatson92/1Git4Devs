@@ -153,7 +153,7 @@ namespace CashFlow.Services
 					a.TotalNetWorth = a.TotalAssets + a.TotalLiabilities;
 				}
 
-				return query;
+				return query.ToArray();
 			}
 		}
 
