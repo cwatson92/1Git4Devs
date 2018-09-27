@@ -49,15 +49,6 @@ namespace CashFlow.Data
 
 		public decimal OtherAssets { get; set; }
 
-		public decimal TotalAssets
-		{
-			get => SavingsAccount + CheckingAccount + MoneyMarketAccount + SavingsBonds +
-				CertificateOfDeposits + IRA + RothIRA + Retirement401K + SepIRA + Pension +
-				Annuity + RealEstate + PrincipalHome + VacationHome + CarsTrucksBoats +
-				HomeFurnishings + OtherAssets;
-			set { }
-		}
-
 		public decimal CreditCardBalance { get; set; }
 
 		public decimal EstimatedIncomeTaxOwed { get; set; }
@@ -77,19 +68,5 @@ namespace CashFlow.Data
 		public decimal LifeInsurancePolicyLoans { get; set; }
 
 		public decimal OtherLongTermDebt { get; set; }
-
-		public decimal TotalLiabilities
-		{
-			get => CreditCardBalance + EstimatedIncomeTaxOwed +
-				OtherOutstandingBills + HomeMortgage + HomeEquityLoan + MortgagesOnRentals +
-				CarLoans + StudentLoans + LifeInsurancePolicyLoans + OtherLongTermDebt;
-			set { }
-		}
-
-		public decimal TotalNetWorth
-		{
-			get => TotalAssets - TotalLiabilities;
-			set { }
-		}
 	}
 }
