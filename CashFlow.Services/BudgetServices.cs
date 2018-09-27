@@ -48,7 +48,19 @@ namespace CashFlow.Services
 		{
 			using (_ctx)
 			{
-				return _ctx.Budgets.Single(x => x.BudgetId == id && x.OwnerId == _userId);
+				var entity =
+					_ctx
+						.Budgets
+						.Single(x => x.OwnerId == _userId && x.BudgetId == id);
+
+				return new Budget
+				{
+					BudgetId = entity.BudgetId,
+					OwnerId = entity.OwnerId,
+					MonthlyIncome = entity.MonthlyIncome,
+					EstimatedAvailableBalance = entity.EstimatedAvailableBalance,
+					SavingsAmount = entity.SavingsAmount
+				};
 			}
 		}
 
