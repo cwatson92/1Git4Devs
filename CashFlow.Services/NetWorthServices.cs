@@ -91,20 +91,11 @@ namespace CashFlow.Services
 		{
 			using (_ctx)
 			{
-				var entity =
-					_ctx
-						.NetWorths
-						.Select
-						(
-							x =>
-								new NetWorth
-								{
-									NetWorthId = x.NetWorthId,
-									OwnerId = x.OwnerId,
-								}
-						);
+				var query = from n in _ctx.NetWorths
+					   where n.OwnerId == _userId
+					   select n;
 
-				return entity.ToArray();
+				return query.ToArray();
 			}
 		}
 
