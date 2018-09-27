@@ -78,6 +78,8 @@ namespace CashFlow.Services
 
 		public bool UpdateBudget(Budget model)
 		{
+			model.OwnerId = _userId;
+
 			using (_ctx)
 			{
 				var entity =
