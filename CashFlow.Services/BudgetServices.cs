@@ -68,25 +68,6 @@ namespace CashFlow.Services
 		{
 			using (_ctx)
 			{
-				//var query =
-				//	_ctx
-				//		.Budgets
-				//		.Where(x => x.OwnerId == _userId)
-				//		.Select
-				//		(
-				//			x =>
-				//				new Budget
-				//				{
-				//					BudgetId = x.BudgetId,
-				//					OwnerId = x.OwnerId,
-				//					MonthlyIncome = x.MonthlyIncome,
-				//					EstimatedAvailableBalance = x.EstimatedAvailableBalance,
-				//					SavingsAmount = x.SavingsAmount
-				//				}
-				//		);
-
-				//return query.ToArray();
-
 				var query = from b in _ctx.Budgets
 					   where b.OwnerId == _userId
 					   select b;
