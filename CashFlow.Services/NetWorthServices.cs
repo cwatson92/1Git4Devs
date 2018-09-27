@@ -47,7 +47,43 @@ namespace CashFlow.Services
 		{
 			using (_ctx)
 			{
-				return _ctx.NetWorths.Single(x => x.NetWorthId == id && x.OwnerId == _userId);
+				var entity = 
+					_ctx
+						.NetWorths
+						.Single(x => x.OwnerId == _userId && x.NetWorthId == id);
+
+				return new NetWorth
+				{
+					NetWorthId = entity.NetWorthId,
+					OwnerId = entity.OwnerId,
+					SavingsAccount = entity.SavingsAccount,
+					CheckingAccount = entity.CheckingAccount,
+					MoneyMarketAccount = entity.MoneyMarketAccount,
+					SavingsBonds = entity.SavingsBonds,
+					CertificateOfDeposits = entity.CertificateOfDeposits,
+					IRA = entity.IRA,
+					RothIRA = entity.RothIRA,
+					Retirement401K = entity.Retirement401K,
+					SepIRA = entity.SepIRA,
+					Pension = entity.Pension,
+					Annuity = entity.Annuity,
+					RealEstate = entity.RealEstate,
+					PrincipalHome = entity.PrincipalHome,
+					VacationHome = entity.VacationHome,
+					CarsTrucksBoats = entity.CarsTrucksBoats,
+					HomeFurnishings = entity.HomeFurnishings,
+					OtherAssets = entity.OtherAssets,
+					CreditCardBalance = entity.CreditCardBalance,
+					EstimatedIncomeTaxOwed = entity.EstimatedIncomeTaxOwed,
+					OtherOutstandingBills = entity.OtherOutstandingBills,
+					HomeMortgage = entity.HomeMortgage,
+					HomeEquityLoan = entity.HomeEquityLoan,
+					MortgagesOnRentals = entity.MortgagesOnRentals,
+					CarLoans = entity.CarLoans,
+					StudentLoans = entity.StudentLoans,
+					LifeInsurancePolicyLoans = entity.LifeInsurancePolicyLoans,
+					OtherLongTermDebt = entity.OtherLongTermDebt
+				};
 			}
 		}
 
@@ -55,7 +91,7 @@ namespace CashFlow.Services
 		{
 			using (_ctx)
 			{
-				var query =
+				var entity =
 					_ctx
 						.NetWorths
 						.Select
@@ -68,7 +104,7 @@ namespace CashFlow.Services
 								}
 						);
 
-				return query.ToArray();
+				return entity.ToArray();
 			}
 		}
 
