@@ -66,12 +66,14 @@ namespace CashFlow.Services
 
 		public bool UpdateExpense(Expense model)
 		{
+			model.OwnerId = _userId;
+
 			using (_ctx)
 			{
 				var entity = 
 					_ctx
 						.Expenses
-						.Single(x => x.ExpenseId == model.ExpenseId && x.OwnerId == model.OwnerId);
+						.Single(x => x.ExpenseId == model.ExpenseId && x.OwnerId == _userId);
 
 				entity.OwnerId = model.OwnerId;
 				entity.Name = model.Name;
