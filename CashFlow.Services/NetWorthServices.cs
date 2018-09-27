@@ -1,5 +1,6 @@
 ﻿using CashFlow.Contracts;
 using CashFlow.Data;
+using CashFlow.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +44,7 @@ namespace CashFlow.Services
 			}
 		}
 
-		public NetWorth GetNetWorth(int id)
+		public NetWorthWithTotals GetNetWorth(int id)
 		{
 			using (_ctx)
 			{
@@ -52,7 +53,7 @@ namespace CashFlow.Services
 						.NetWorths
 						.Single(x => x.OwnerId == _userId && x.NetWorthId == id);
 
-				return new NetWorth
+				var dto = new NetWorthWithTotals
 				{
 					NetWorthId = entity.NetWorthId,
 					OwnerId = entity.OwnerId,
@@ -82,20 +83,77 @@ namespace CashFlow.Services
 					CarLoans = entity.CarLoans,
 					StudentLoans = entity.StudentLoans,
 					LifeInsurancePolicyLoans = entity.LifeInsurancePolicyLoans,
-					OtherLongTermDebt = entity.OtherLongTermDebt
+					OtherLongTermDebt = entity.OtherLongTermDebt,
+					TotalAssets = entity.SavingsAccount + entity.CheckingAccount + entity.MoneyMarketAccount + entity.SavingsBonds + entity.CertificateOfDeposits + entity.CertificateOfDeposits +
+						entity.IRA + entity.RothIRA + entity.Retirement401K + entity.SepIRA + entity.Pension + entity.Annuity + entity.RealEstate + entity.PrincipalHome + entity.VacationHome +
+						entity.CarsTrucksBoats + entity.HomeFurnishings + entity.OtherAssets,
+					TotalLiabilities = entity.CreditCardBalance + entity.EstimatedIncomeTaxOwed + entity.OtherOutstandingBills + entity.HomeMortgage + entity.HomeMortgage + entity.HomeEquityLoan + 
+						entity.MortgagesOnRentals + entity.CarLoans + entity.StudentLoans + entity.LifeInsurancePolicyLoans + entity.OtherLongTermDebt,
 				};
+
+				dto.TotalNetWorth = dto.TotalAssets + dto.TotalLiabilities;
+
+				return dto;
 			}
 		}
 
-		public IEnumerable<NetWorth> GetNetWorths()	
+		public IEnumerable<NetWorthWithTotals> GetNetWorths()	
 		{
 			using (_ctx)
 			{
-				var query = from n in _ctx.NetWorths
-					   where n.OwnerId == _userId
-					   select n;
+				var query =
+					_ctx
+						.NetWorths
+						.Where(x => x.OwnerId == _userId)
+						.Select(
+							x =>
+								new NetWorthWithTotals
+								{
+									NetWorthId = x.NetWorthId,
+									OwnerId = x.OwnerId,
+									SavingsAccount = x.SavingsAccount,
+									CheckingAccount = x.CheckingAccount,
+									MoneyMarketAccount = x.MoneyMarketAccount,
+									SavingsBonds = x.SavingsBonds,
+									CertificateOfDeposits = x.CertificateOfDeposits,
+									IRA = x.IRA,
+									RothIRA = x.RothIRA,
+									Retirement401K = x.Retirement401K,
+									SepIRA = x.SepIRA,
+									Pension = x.Pension,
+									Annuity = x.Annuity,
+									RealEstate = x.RealEstate,
+									PrincipalHome = x.PrincipalHome,
+									VacationHome = x.VacationHome,
+									CarsTrucksBoats = x.CarsTrucksBoats,
+									HomeFurnishings = x.HomeFurnishings,
+									OtherAssets = x.OtherAssets,
+									CreditCardBalance = x.CreditCardBalance,
+									EstimatedIncomeTaxOwed = x.EstimatedIncomeTaxOwed,
+									OtherOutstandingBills = x.OtherOutstandingBills,
+									HomeMortgage = x.HomeMortgage,
+									HomeEquityLoan = x.HomeEquityLoan,
+									MortgagesOnRentals = x.MortgagesOnRentals,
+									CarLoans = x.CarLoans,
+									StudentLoans = x.StudentLoans,
+									LifeInsurancePolicyLoans = x.LifeInsurancePolicyLoans,
+									OtherLongTermDebt = x.OtherLongTermDebt,
+									TotalAssets = x.SavingsAccount + x.CheckingAccount + x.MoneyMarketAccount + x.SavingsBonds
+										+ x.CertificateOfDeposits + x.IRA + x.RothIRA + x.Retirement401K + x.SepIRA + x.Pension +
+										x.Annuity + x.RealEstate + x.PrincipalHome + x.VacationHome + x.CarsTrucksBoats + x.HomeFurnishings
+										+ x.OtherAssets,
+									TotalLiabilities = x.CreditCardBalance + x.EstimatedIncomeTaxOwed + x.OtherOutstandingBills + x.HomeMortgage + 
+									x.HomeEquityLoan + x.MortgagesOnRentals + x.CarLoans + x.StudentLoans + x.LifeInsurancePolicyLoans + x.OtherLongTermDebt,
+								}
 
-				return query.ToArray();
+						);
+
+				foreach(var a in query)
+				{
+					a.TotalNetWorth = a.TotalAssets + a.TotalLiabilities;
+				}
+
+				return query;
 			}
 		}
 

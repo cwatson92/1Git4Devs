@@ -101,6 +101,10 @@
       <Project>{60068a28-276c-45c7-b08c-07a52ea4a422}</Project>
       <Name>CashFlow.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CashFlow.Models\CashFlow.Models.csproj">
+      <Project>{D7708F9E-2F5D-4723-A92E-F93E2FB325E6}</Project>
+      <Name>CashFlow.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
