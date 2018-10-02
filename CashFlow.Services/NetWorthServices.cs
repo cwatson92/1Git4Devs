@@ -91,7 +91,7 @@ namespace CashFlow.Services
 						entity.MortgagesOnRentals + entity.CarLoans + entity.StudentLoans + entity.LifeInsurancePolicyLoans + entity.OtherLongTermDebt,
 				};
 
-				dto.TotalNetWorth = dto.TotalAssets + dto.TotalLiabilities;
+				dto.TotalNetWorth = dto.TotalAssets - dto.TotalLiabilities;
 
 				return dto;
 			}
@@ -150,7 +150,7 @@ namespace CashFlow.Services
 
 				foreach(var a in query)
 				{
-					a.TotalNetWorth = a.TotalAssets + a.TotalLiabilities;
+					a.TotalNetWorth = a.TotalAssets - a.TotalLiabilities;
 				}
 
 				return query.ToArray();
